@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="part1">
+    <h3>hello </h3>
+<form method="POST">
+                    {% csrf_token %}
+
+                    <button type="submit" class="submit">Login</button>
+                  </form>
+
+    <a href="{% url 'login' %}" class="submit">تسجيل دخول</a>
+        <a href="{% url 'account:account' %}" class="submit">ليس لديك حساب؟ أنشأ واحداً</a>
+         <a href="{% url 'social:begin' 'facebook' %}" class="submit">تسجيل دخول باستخدام فيسبوك</a>
+         <br>
+         <!-- <a href="{% url 'social:begin' 'google' %}">تسجيل باستخدام جوجل</a> -->
+    </div>
+
+
+{% endblock content %}
